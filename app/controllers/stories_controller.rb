@@ -7,8 +7,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    @photo = Photo.new(photo_params)
-
+    @photo = Photo.create(photo_params)
   end
 
 
@@ -16,10 +15,11 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :description, )
+    params.require(:story).permit(:title, :description, :img)
   end
 
   def photo_params
+    params.require(:photo).require(:img_file_name, :img_file_size, :img_content_type)
   end
 
 end
