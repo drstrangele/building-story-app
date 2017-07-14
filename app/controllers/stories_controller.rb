@@ -1,2 +1,25 @@
 class StoriesController < ApplicationController
+  def new
+    @story = Story.new
+    @photo = Photo.new
+    @building = Building.find_by(params[:id])
+  end
+
+  def create
+    @story = Story.new(story_params)
+    @photo = Photo.new(photo_params)
+
+  end
+
+
+
+  private
+
+  def story_params
+    params.require(:story).permit(:title, :description, )
+  end
+
+  def photo_params
+  end
+
 end
