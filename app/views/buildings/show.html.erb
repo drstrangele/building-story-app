@@ -10,8 +10,9 @@
     <div>
       <%= s.title %><br />
       <%= s.description %><br />
+      <%= s.id %>
       <% if is_owner?(s) %>
-        <%= button_to "Edit Story", edit_building_story_path([@building, @story]), method: "get", action: "edit" %>
+        <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit" %>
         <h4>Delete Button Goes Here</h4>
       <% end %>
     </div>

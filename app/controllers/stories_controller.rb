@@ -16,9 +16,19 @@ class StoriesController < ApplicationController
   end
 
   def show
-
   end
 
+  def edit
+    @story = Story.find(params[:id])
+    @building = @story.building_id
+  end
+
+  def update
+    @story = Story.find(params[:id])
+    @building = @story.building_id
+    @story.update_attributes(story_params)
+    redirect_to building_path(@building)
+  end
 
 
   private
