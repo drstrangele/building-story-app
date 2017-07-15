@@ -2,8 +2,12 @@
 
 <%= @building.name %><br />
 <%= @building.address %><br />
+
 <h3>STORIES:</h3><br />
 <%= @building.stories.each do |s| %>
-  <%= s.title %><br />
-  <%= s.description %><br />
+  <div>
+    <%= s.title %><br />
+    <%= s.description %><br />
+  </div>
+  <hr />
 <% end %>
