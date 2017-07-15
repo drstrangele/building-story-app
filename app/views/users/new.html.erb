@@ -1,1 +1,8 @@
 <h1>SIGN-UP FORM PAGE</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %><br />
+  <%= f.email_field :email, placeholder: "Email, ex: email@domain.com" %><br />
+  <%= f.password_field :password, placeholder: "Password, must contain at least 3 characters" %>
+  <%= f.submit "Sign-up" %>
+<% end %>
