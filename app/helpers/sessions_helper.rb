@@ -22,4 +22,8 @@ module SessionsHelper
       redirect_to login_path
     end
   end
+
+  def is_owner? resource
+    current_user.id == resource.user_id
+  end
 end

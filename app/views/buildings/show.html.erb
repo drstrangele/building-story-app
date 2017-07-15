@@ -6,9 +6,16 @@
 <h3>STORIES:</h3><br />
 
 <% @stories.each do |s| %>
-  <div>
-    <%= s.title %><br />
-    <%= s.description %><br />
-  </div>
-  <hr />
+
+    <div>
+      <%= s.title %><br />
+      <%= s.description %><br />
+      <% if is_owner?(s) %>
+        <h4>Edit Button Goes Here</h4>
+        <h4>Delete Button Goes Here</h4>
+      <% end %>
+    </div>
+    <hr />
+
+
 <% end %>
