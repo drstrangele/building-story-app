@@ -4,9 +4,9 @@
 <%= @building.address %><br />
 
 <h3>STORIES:</h3><br />
+<%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new" %>
 
 <% @stories.each do |s| %>
-
     <div>
       <%= s.title %><br />
       <%= s.description %><br />
@@ -16,6 +16,4 @@
       <% end %>
     </div>
     <hr />
-
-
 <% end %>
