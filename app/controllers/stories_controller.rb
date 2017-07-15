@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  before_action :require_login, only: :new
+
   def new
     @story = Story.new
     @photo = Photo.new
