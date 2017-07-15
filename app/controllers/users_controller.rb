@@ -4,7 +4,15 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    @user = User.new(user_params)
+    if @user.save
+      #flash notice - successfully joined
+      #call sessionsHelper login here
+      redirect_to root_path
+    else
+      #flash error - sign-up failed
+      redirect_to new_user_path
+    end
   end
 
 
