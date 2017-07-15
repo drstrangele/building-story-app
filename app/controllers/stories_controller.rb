@@ -24,9 +24,14 @@ class StoriesController < ApplicationController
   end
 
   def update
-
   end
 
+  def destroy
+    @story = Story.find_by(id: params[:id])
+    @building = @story.building_id
+    @story.delete
+    redirect_to building_path(@building)
+  end
 
   private
 

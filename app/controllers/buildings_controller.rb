@@ -23,6 +23,7 @@ class BuildingsController < ApplicationController
   end
 
 
+
   private
 
   def building_params
