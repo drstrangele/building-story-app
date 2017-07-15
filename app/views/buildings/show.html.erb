@@ -4,7 +4,8 @@
 <%= @building.address %><br />
 
 <h3>STORIES:</h3><br />
-<%= @building.stories.each do |s| %>
+
+<% @stories.each do |s| %>
   <div>
     <%= s.title %><br />
     <%= s.description %><br />
