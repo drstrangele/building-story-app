@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <div>
+      <%= link_to "sign-up", new_user_path %>
+      <%= link_to "log-in", login_path %>
+      <%= link_to "logout", logout_path %>
+    </div>
     <%= yield %>
   </body>
 </html>
