@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       #flash notice - successfully joined
-      #call sessionsHelper login here
+      login(@user)
       redirect_to root_path
     else
       #flash error - sign-up failed

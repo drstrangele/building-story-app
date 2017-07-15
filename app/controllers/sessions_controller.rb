@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.confirm(user_params)
     if @user
-      #create sessionsHelper to login & call it here on @user
+      login(@user)
       #flash notice - successful login
       redirect_to root_path
     else
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    #create sessions to logout the user & call it here
+    logout
     redirect_to root_path
   end
 
