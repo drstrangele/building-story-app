@@ -9,16 +9,16 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    @photo = Photo.create(photo_params)
+    @building = Building.find_by(params[:id])
   end
 
-  
+
 
 
   private
 
   def story_params
-    params.require(:story).permit(:title, :description, :img)
+    params.require(:story).permit(:title, :description, :img, :user_id, :building_id)
   end
 
   def photo_params
