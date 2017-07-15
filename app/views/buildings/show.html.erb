@@ -11,7 +11,7 @@
       <%= s.title %><br />
       <%= s.description %><br />
       <% if is_owner?(s) %>
-        <h4>Edit Button Goes Here</h4>
+        <%= button_to "Edit Story", edit_building_story_path([@building, @story]), method: "get", action: "edit" %>
         <h4>Delete Button Goes Here</h4>
       <% end %>
     </div>
