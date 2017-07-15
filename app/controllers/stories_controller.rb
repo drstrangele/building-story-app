@@ -8,10 +8,16 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params)
     @building = Building.find_by(params[:id])
+    @story = Story.new(story_params)
+    if @story.save
+      redirect_to building_path(@building)
+    end
   end
 
+  def show
+
+  end
 
 
 
