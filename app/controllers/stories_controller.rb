@@ -12,6 +12,7 @@ class StoriesController < ApplicationController
     @photo = Photo.create(photo_params)
   end
 
+  
 
 
   private

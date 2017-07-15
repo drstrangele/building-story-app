@@ -26,4 +26,17 @@ module SessionsHelper
   def is_owner? resource
     current_user.id == resource.user_id
   end
+
+  def require_ownership
+    unless is_owner?
+      ##################################
+      #how to use this as a before_action & pass the 'resource' argument to is_owner? ????????
+      ##################################
+
+
+      #flash error message - you cannot edit or delete someone else's story
+      redirect_to root_path
+    end
+  end
+
 end
