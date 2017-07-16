@@ -1,9 +1,20 @@
 <h1>BUILDING SHOW PAGE</h1>
-
+<%= render @photos %>
 <%= @building.name %><br />
 <%= @building.address %><br />
+
 <h3>STORIES:</h3><br />
-<%= @building.stories.each do |s| %>
-  <%= s.title %><br />
-  <%= s.description %><br />
+<%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new" %>
+
+<% @stories.each do |s| %>
+    <div>
+      <%= s.title %><br />
+      <%= s.description %><br />
+      <%= s.id %>
+      <% if is_owner?(s) %>
+        <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit" %>
+        <%= button_to "DELETE Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy" %>
+      <% end %>
+    </div>
+    <hr />
 <% end %>
