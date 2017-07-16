@@ -29,6 +29,7 @@ module SessionsHelper
 
   def require_ownership
     unless current_user.stories.ids.include?(params[:id]) || current_user.stories.ids.include?(params[:id].to_i)
+      flash[:error] = "You are not authorized to access this section."
       redirect_to root_path
     end
   end
