@@ -52,3 +52,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Uploading photos/images
 gem "paperclip", "~> 5.0.0"
+
+# Geocoder
+gem 'geocoder'
+
+# Gmaps
+gem 'gmaps4rails'

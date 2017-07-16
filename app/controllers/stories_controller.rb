@@ -1,10 +1,10 @@
 class StoriesController < ApplicationController
   before_action :require_login, only: :new
-  before_action :require_ownership, only:[:edit] 
+  before_action :require_ownership, only:[:edit]
 
   def new
     @story = Story.new
-    @photo = Photo.new
+  
     @building = Building.find_by(params[:id])
   end
 
