@@ -1,5 +1,5 @@
 <h1>BUILDING SHOW PAGE</h1>
-
+<%= render @photos %>
 <%= @building.name %><br />
 <%= @building.address %><br />
 
@@ -14,7 +14,6 @@
       <% if is_owner?(s) %>
         <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit" %>
         <%= button_to "DELETE Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy" %>
-
       <% end %>
     </div>
     <hr />

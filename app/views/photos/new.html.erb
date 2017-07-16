@@ -1,0 +1,11 @@
+<h1>NEW PHOTO PAGE</h1>
+
+<%= form_for @photo, url: building_story_photos_path(@building, @story), method: "post", html: { multipart: true } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :img %>
+    <%= f.file_field :img, class: 'form-control'%>
+  </div>
+
+  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+<% end %>
