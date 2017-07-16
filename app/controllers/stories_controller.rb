@@ -1,6 +1,5 @@
 class StoriesController < ApplicationController
   before_action :require_login, only: :new
-
   before_action only: [:edit, :update, :destroy] do
     require_ownership(@story)
   end

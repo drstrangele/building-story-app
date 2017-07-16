@@ -28,18 +28,8 @@ module SessionsHelper
   end
 
   def require_ownership resource
-    unless is_owner?(resource)
-      ##################################
-      #how to use this as a before_action & pass the 'resource' argument to is_owner? ????????
-      ##################################
-
-
-      #flash error message - you cannot edit or delete someone else's story
+    unless current_user.stories.ids.include?(params[:id])
       redirect_to root_path
-
-
-
-      current_user.stories.ids.include?(params[:id])
     end
   end
 
