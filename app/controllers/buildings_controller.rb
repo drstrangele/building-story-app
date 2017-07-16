@@ -1,11 +1,13 @@
 class BuildingsController < ApplicationController
 
-
   def index
     @buildings = Building.all
     @hash = Gmaps4rails.build_markers(@buildings) do |building, marker|
+      bldg_link = view_context.link_to building.name, building_path(building)
       marker.lat building.lat
       marker.lng building.long
+      marker.title building.name
+      marker.infowindow "<h4>#{bldg_link}</h4>"
     end
   end
 
@@ -26,6 +28,7 @@ class BuildingsController < ApplicationController
     @story.update_attributes(story_params)
     redirect_to building_path(@building)
   end
+
 
 
   private
