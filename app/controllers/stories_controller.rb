@@ -17,6 +17,8 @@ class StoriesController < ApplicationController
   end
 
   def show
+    story_id = params[:id]
+    @story = Story.find_by_id(story_id)
   end
 
   def edit
