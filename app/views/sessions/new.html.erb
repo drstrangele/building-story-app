@@ -1,7 +1,11 @@
 <h1>LOGIN FORM PAGE</h1>
 
-<%= form_for @user, url: "/sessions", method: 'post' do |f| %>
-  <%= f.email_field :email, placeholder: "Email" %><br />
-  <%= f.password_field :password, placeholder: "Password" %><br />
-  <%= f.submit "Log-in" %>
+<%= form_for @user, url: '/sessions', method: 'post' do |f| %>
+  <div class="form-group">
+    <%= f.text_field :email, placeholder: 'Email', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, placeholder: 'Password', class: "form-control" %>
+  </div>
+  <%= f.submit 'Log In', class: "btn btn-default" %>
 <% end %>
