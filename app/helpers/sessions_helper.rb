@@ -27,8 +27,8 @@ module SessionsHelper
     current_user.id == resource.user_id
   end
 
-  def require_ownership resource
-    unless current_user.stories.ids.include?(params[:id])
+  def require_ownership
+    unless current_user.stories.ids.include?(params[:id]) || current_user.stories.ids.include?(params[:story_id])
       redirect_to root_path
     end
   end
