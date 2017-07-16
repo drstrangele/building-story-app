@@ -1,5 +1,5 @@
 class BuildingsController < ApplicationController
-  # before_action :require_ownership, only:[:update]
+  
 
   def index
     @buildings = Building.all
