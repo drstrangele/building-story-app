@@ -24,7 +24,7 @@ module SessionsHelper
   end
 
   def is_owner? resource
-    current_user.id == resource.user_id
+     current_user.id == resource.user_id
   end
 
   def require_ownership

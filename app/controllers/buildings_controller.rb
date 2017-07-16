@@ -7,6 +7,11 @@ class BuildingsController < ApplicationController
       marker.lat building.lat
       marker.lng building.long
       marker.title building.name
+      marker.picture({
+                :url    => "http://meteo.uniparthenope.it/sites/default/modules/sais/images/green.png",
+                :width  => "50",
+                :height => "50"
+               })
       marker.infowindow "<h4>#{bldg_link}</h4>"
     end
   end
