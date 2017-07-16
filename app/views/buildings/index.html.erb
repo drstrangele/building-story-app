@@ -142,7 +142,15 @@
             }
           ]
         });
+
+        var myLatLng = {lat: 37.79086, lng: -122.40147};
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
       }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8PPp4_lAKHwb0FHM8YMc8tiyqq1AYatc&callback=initMap"
     async defer></script>

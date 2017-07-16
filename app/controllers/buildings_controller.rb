@@ -3,6 +3,10 @@ class BuildingsController < ApplicationController
 
   def index
     @buildings = Building.all
+    @hash = Gmaps4rails.build_markers(@buildings) do |building, marker|
+      marker.lat building.lat
+      marker.lng building.long
+    end
   end
 
   def show
