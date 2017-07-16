@@ -55,3 +55,6 @@ gem "paperclip", "~> 5.0.0"
 
 # Geocoder
 gem 'geocoder'
+
+# Gmaps
+gem 'gmaps4rails'
