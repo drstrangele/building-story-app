@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   before_action :require_login, only: :new
-  before_action :require_ownership, only:[:edit, :update, :destroy] 
+  before_action :require_ownership, only:[:edit] 
 
   def new
     @story = Story.new
