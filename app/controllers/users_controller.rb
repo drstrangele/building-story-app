@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       #flash notice - user info updated successfully
       redirect_to root_path
     else
-      #flash error - updates not saved
+      flash[:error] = @user.errors.full_messages.join(", ")
       redirect_to edit_user_path(@user)
     end
   end
