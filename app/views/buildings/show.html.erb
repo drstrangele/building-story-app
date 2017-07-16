@@ -8,7 +8,7 @@
 
 <% @stories.each do |s| %>
     <div>
-      <%= s.title %><br />
+      <%= link_to s.title, building_story_path(@building, s) %><br />
       <%= s.description %><br />
       <%= s.id %>
       <% if is_owner?(s) %>
