@@ -14,7 +14,7 @@
       <% if is_owner?(s) %>
         <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit" %>
         <%= button_to "DELETE Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy" %>
-        <h4>Delete Button Goes Here</h4>
+
       <% end %>
     </div>
     <hr />
