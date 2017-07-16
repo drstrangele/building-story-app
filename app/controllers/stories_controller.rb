@@ -1,6 +1,10 @@
 class StoriesController < ApplicationController
   before_action :require_login, only: :new
 
+  before_action only: [:edit, :update, :destroy] do
+    require_ownership(@story)
+  end
+
   def new
     @story = Story.new
     @photo = Photo.new

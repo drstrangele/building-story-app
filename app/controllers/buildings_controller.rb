@@ -1,4 +1,7 @@
 class BuildingsController < ApplicationController
+  before_action only: [:update] do
+    require_ownership(@story)
+  end
 
   def index
     @buildings = Building.all
@@ -21,7 +24,6 @@ class BuildingsController < ApplicationController
     @story.save
     redirect_to building_path(@building)
   end
-
 
 
   private
