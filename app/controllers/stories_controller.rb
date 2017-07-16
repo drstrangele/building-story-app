@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-  
+
     @building = Building.find_by(params[:id])
   end
 

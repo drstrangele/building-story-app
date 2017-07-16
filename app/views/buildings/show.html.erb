@@ -13,7 +13,7 @@
       <%= s.id %>
       <% if is_owner?(s) %>
         <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit" %>
-        <%= button_to "DELETE Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy" %>
+        <%= button_to "DELETE Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-danger",  data: { confirm: "Are you sure you want to delete?" } %>
       <% end %>
     </div>
     <hr />
