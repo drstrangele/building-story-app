@@ -1,1 +1,7 @@
 <h1>EDIT USER FORM PAGE</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %><br />
+  <%= f.email_field :email, placeholder: "Email, ex: email@domain.com" %><br />
+  <%= f.submit "Save Updates" %>
+<% end %>

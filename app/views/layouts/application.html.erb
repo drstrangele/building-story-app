@@ -12,6 +12,7 @@
     <% if current_user %>
       <div>
         <%= @current_user.name %>
+        <%= link_to "Edit User Info", edit_user_path(@current_user) %>
         <%= link_to "logout", logout_path %>
       </div>
     <% else %>
