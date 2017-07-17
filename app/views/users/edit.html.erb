@@ -1,11 +1,12 @@
-<h1>EDIT USER FORM PAGE</h1>
 
-<%= form_for @user do |f| %>
-  <div class="form-group">
-    <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.email_field :email, placeholder: "Email, ex: email@domain.com", class: "form-control" %>
-  </div>
-  <%= f.submit "Save Updates", class: "btn btn-default" %>
+<div id='edit-user' class= 'edit-user-container'>
+
+  <%= form_for(@user, html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 edit-form-user' }) do |form| %>
+  <div class='edit-form col-sm-offset-2 col-sm-8'>
+    <%= render partial: 'users/form', object: form %>
+    <div class='submit-field'>
+      <%= form.submit "Save Updates", class: "btn btn-default" %>
+    </div>
 <% end %>
+</div>
+</div>

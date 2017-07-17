@@ -18,10 +18,8 @@ class StoriesController < ApplicationController
     @story = Story.new(s)
     if @story.save
       flash[:notice] = "Story saved successfully."
-
     else
       flash[:error] = @story.errors.full_messages
-      explode
     end
     redirect_to building_path(@building)
   end
