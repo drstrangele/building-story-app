@@ -12,6 +12,9 @@ class StoriesController < ApplicationController
     @building = Building.find_by(params[:id])
     @story = Story.new(story_params)
     if @story.save
+      p = photo_params
+      p[:story] = @story
+      #Photo.create(p)
       redirect_to building_path(@building)
     end
   end
@@ -23,10 +26,14 @@ class StoriesController < ApplicationController
 
   def edit
     @story = Story.find_by(id: params[:id])
-    @building = @story.building_id
+    @building = Building.find_by_id(@story.building_id)
   end
 
   def update
+    @building = Building.find_by_id(params[:building_id])
+    @story = Story.find_by_id(params[:id])
+    @story.update_attributes(story_params)
+    redirect_to building_path(@building)
   end
 
   def destroy
@@ -39,11 +46,11 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :description, :img, :user_id, :building_id)
+    params.require(:story).permit(:title, :description, :user_id)
   end
 
   def photo_params
-    params.require(:photo).require(:img_file_name, :img_file_size, :img_content_type)
+    params.require(:story).permit(:img, :title)
   end
 
 end
