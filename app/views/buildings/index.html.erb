@@ -1,8 +1,8 @@
 <h1>BUILDINGS</h1>
 
+<%= render 'mainpage/jumbotron' %>
+<%= render 'mainpage/map' %>
+
 <% @buildings.each do |b| %>
   <%= link_to b.name, building_path(b) %>
 <% end %>
-
-<%= render 'mainpage/jumbotron' %>
-<%= render 'mainpage/map' %>
