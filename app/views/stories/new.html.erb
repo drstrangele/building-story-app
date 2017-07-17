@@ -1,9 +1,22 @@
-<h1>New Story Form for <%= @building.name %></h1>
 
-<%= form_for @story, url: building_stories_path(@building), method: "post" do |f| %>
-    <p>Title: <%= f.text_field :title %></p>
-    <p>Description: <%= f.text_area :description %></p>
-    <%= f.file_field :img %>
-    <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
-  <%= f.submit "Submit New Story" %>
-<% end %>
+<div id='new-story' class='new-story-container'>
+
+  <%= form_for(@story, url: building_stories_path(@building), method: "post", html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-story-f' } ) do |form| %>
+  <div class='new-story-form col-sm-offset-2 col-sm-8'>
+    <h1><%= @building.name %></h1>
+    <div id="flash-entry">
+      <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+      <%= render partial: '/stories/form', object: form %>
+      <%= form.hidden_field :user_id, :value => "#{current_user.id}" %>
+
+    <div class="submit-field">
+      <%= form.submit "Submit New Story", class: 'btn btn-default'%>
+    </div>
+
+  </div>
+  <% end %>
+</div>
