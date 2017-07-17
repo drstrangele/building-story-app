@@ -1,14 +1,22 @@
 <h1>SIGN-UP FORM PAGE</h1>
 
-<%= form_for @user do |f| %>
-  <div class="form-group">
-    <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+<div id='new-user' class='sign-up-container'>
+
+<%= form_for(@user, html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-form' }) do |f| %>
+<div class='sign-up-form col-sm-offset-2 col-sm-8'>
+
+    <%= render partial: '/users/_form', object: form %>
+
+  <div class="password-field form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control', :required => true, placeholder: 'Password must contain at least 3 characters' %>
   </div>
-  <div class="form-group">
-    <%= f.email_field :email, placeholder: "Email, ex: email@domain.com", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.password_field :password, placeholder: "Password, must contain at least 3 characters", class: "form-control" %>
-  </div>
+
+  <div class='submit-field'>
     <%= f.submit "Sign-up", class: "btn btn-default" %>
+  </div>
+
+</div>
 <% end %>
+
+</div>

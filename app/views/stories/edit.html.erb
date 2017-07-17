@@ -6,5 +6,5 @@
     <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
     <%= f.hidden_field :building_id, :value => @building %>
     <%= f.hidden_field :id, :value => @story.id %>
-  <%= f.submit "Submit Updates" %>
+  <%= f.submit "Submit Updates", class: 'btn btn-default' %>
 <% end %>
