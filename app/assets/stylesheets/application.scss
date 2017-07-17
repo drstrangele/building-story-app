@@ -1,11 +1,28 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-.navbar-user {
-  top: 17px;
-  font-size: 24;
+.navbar {
+  margin-bottom: 0;
 }
 
-.blueprints{
-  background-image: url("blueprints.gif");
+.navbar-user {
+  top: 17px;
+}
+
+.blueprints {
+  background-image: image-url("blueprints.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height:600px;
+  padding: 0 0 50px 0;
+}
+
+.jumbotron {
+  background: image-url("oldbuilding.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
 }
