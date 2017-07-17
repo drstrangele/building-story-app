@@ -24,14 +24,9 @@ class BuildingsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-    @building = Building.find_by_id(params[:id])
-    @story = Story.find_by(params[:story].permit(:id))
-    @story.update_attributes(story_params)
-    redirect_to building_path(@building)
   end
 
 

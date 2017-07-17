@@ -2,21 +2,28 @@ class StoriesController < ApplicationController
   before_action :require_login, only: :new
   before_action :require_ownership, only:[:edit]
 
+  def index
+    @stories = Story.all
+  end
+
   def new
     @story = Story.new
-
     @building = Building.find_by(params[:id])
   end
 
   def create
     @building = Building.find_by(params[:id])
-    @story = Story.new(story_params)
+    s = story_params
+    s[:building_id] = @building.id
+    @story = Story.new(s)
     if @story.save
-      p = photo_params
-      p[:story] = @story
-      #Photo.create(p)
-      redirect_to building_path(@building)
+      flash[:notice] = "Story saved successfully."
+
+    else
+      flash[:error] = @story.errors.full_messages
+      explode
     end
+    redirect_to building_path(@building)
   end
 
   def show
