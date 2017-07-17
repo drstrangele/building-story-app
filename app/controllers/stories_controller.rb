@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-    @building = Building.find_by(params[:id])
+    @building = Building.find_by_id(params[:building_id])
   end
 
   def create

@@ -1,6 +1,6 @@
 <h1>Add New Photo to <%= @story.title %> </h1>
 
-<%= form_for @photo     html: { multipart: true } do |f| %>
+<%= form_for @photo, html: { multipart: true } do |f| %>
   <div>
     <%= f.file_field :img %>
   </div>
