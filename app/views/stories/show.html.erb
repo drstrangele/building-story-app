@@ -5,3 +5,5 @@
 <p><%= @stor.description %></p>
 
 <%= render @story.photos %>
+
+<%= link_to "Add Photo", new_building_story_photo_path(@building, @story) %>

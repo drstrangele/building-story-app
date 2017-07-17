@@ -6,6 +6,8 @@ class PhotosController < ApplicationController
 
   def new
     @photo = Photo.new
+    @story = Story.find_by_id(params[:story_id])
+    @building = Building.find_by_id(params[:building_id])
   end
 
   def create

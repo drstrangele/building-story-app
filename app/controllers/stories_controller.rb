@@ -21,10 +21,8 @@ class StoriesController < ApplicationController
       p[:story_id] = @story
       Photo.create(p)
       flash[:notice] = "Story saved successfully."
-
     else
       flash[:error] = @story.errors.full_messages
-
     end
     redirect_to building_path(@building)
   end
@@ -32,6 +30,7 @@ class StoriesController < ApplicationController
   def show
     story_id = params[:id]
     @story = Story.find_by_id(story_id)
+    @building = Building.find_by_id(params[:building_id])
   end
 
   def edit
