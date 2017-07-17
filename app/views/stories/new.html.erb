@@ -3,6 +3,7 @@
 <%= form_for @story, url: building_stories_path(@building), method: "post" do |f| %>
     <p>Title: <%= f.text_field :title %></p>
     <p>Description: <%= f.text_area :description %></p>
+    <%= f.file_field :img %>
     <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
   <%= f.submit "Submit New Story" %>
 <% end %>
