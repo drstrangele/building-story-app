@@ -10,8 +10,8 @@ class BuildingsController < ApplicationController
       marker.infowindow "<h4>#{bldg_link}</h4>"
       marker.picture({
                 :url    => "https://i.stack.imgur.com/rU427.png",
-                :width  => "32",
-                :height => "32"
+                :width  => "38",
+                :height => "38"
                })
     end
   end

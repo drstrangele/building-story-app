@@ -1,7 +1,10 @@
-<h1>BUILDINGS</h1>
+<!-- Splash page -->
 
 <%= render 'mainpage/jumbotron' %>
+
 <%= render 'mainpage/map' %>
+
+<%= render 'mainpage/cards' %>
 
 <% @buildings.each do |b| %>
   <%= link_to b.name, building_path(b) %>
