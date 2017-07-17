@@ -1,6 +1,6 @@
 <h1>EDIT STORY FORM PAGE</h1>
 
-<%= form_for @story, url: building_path(@building), method: "patch", action: "update" do |f| %>
+<%= form_for [@building, @story], method: "patch", action: "update" do |f| %>
     <p>Title: <%= f.text_field :title %></p>
     <p>Description: <%= f.text_area :description %></p>
     <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
