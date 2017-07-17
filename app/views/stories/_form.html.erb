@@ -1,0 +1,9 @@
+<div class="text-field form-group">
+  <%= form.label :title %>
+  <%= form.text_field :title, type: 'title', class: 'form-control', :required => true, placeholder: 'Title' %>
+</div>
+
+<div class="text-area form-group">
+  <%= form.label :description %>
+  <%= form.text_area :description, :rows => 10, style: 'width:100%', type: 'description', class: 'form-control', :required => true, placeholder: 'Description' %>
+</div>

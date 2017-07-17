@@ -1,10 +1,21 @@
-<h1>EDIT STORY FORM PAGE</h1>
 
-<%= form_for [@building, @story], method: "patch", action: "update" do |f| %>
-    <p>Title: <%= f.text_field :title %></p>
-    <p>Description: <%= f.text_area :description %></p>
-    <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
-    <%= f.hidden_field :building_id, :value => @building %>
-    <%= f.hidden_field :id, :value => @story.id %>
-  <%= f.submit "Submit Updates", class: 'btn btn-default' %>
-<% end %>
+<div id='edit-story' class='edit-story-container'>
+  <%= form_for([@building, @story], method: "patch", action: "update", html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 edit-story-f' } ) do |form| %>
+  <div class='edit-story-form col-sm-offset-2 col-sm-8'>
+    <div id="flash-entry">
+      <% flash.each do |key, value| %>
+      <div class='flash <%= key %>'><%= value %></div>
+      <% end %>
+    </div>
+      <%= render partial: '/stories/form', object: form %>
+      <%= form.hidden_field :user_id, :value => "#{current_user.id}" %>
+      <%= form.hidden_field :building_id, :value => @building %>
+      <%= form.hidden_field :id, :value => @story.id %>
+
+    <div class='submit-field'>
+      <%= form.submit "Submit Updates", class: 'btn btn-default' %>
+    </div>
+
+  </div>
+  <% end %>
+</div>
