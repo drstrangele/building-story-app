@@ -13,7 +13,7 @@
       <%= s.description %><br />
       <%= s.id %>
       <% s.photos.each do |g| %>
-        <%= image_tag src=g.img.url %>
+        <%= image_tag src=g.img.url, width: "100px" %>
       <% end %>
       <% if is_owner?(s) %>
         <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default' %>
