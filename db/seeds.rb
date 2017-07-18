@@ -10,8 +10,10 @@
 # Story.destroy_all
 # Building.destroy_all
 
+
 Photo.destroy_all
 Story.destroy_all
+User.destroy_all
 Building.destroy_all
 
 Building.create([
@@ -20,6 +22,10 @@ Building.create([
   {name: "TransAmerica Pyramid", address: "600 Montgomery Street, San Francisco, CA", description: "The Transamerica Pyramid at 600 Montgomery Street between Clay and Washington Streets in the Financial District of San Francisco, California, is a 48-story postmodern building and the second-tallest skyscraper in the San Francisco skyline. Its height will be surpassed by Salesforce Tower, currently under construction.[5] The building no longer houses the headquarters of the Transamerica Corporation, which moved its U.S. headquarters to Baltimore, Maryland, but it is still associated with the company and is depicted in the company's logo. Designed by architect William Pereira and built by Hathaway Dinwiddie Construction Company, at 853 ft (260 m), on completion in 1972 it was the eighth tallest building in the world. (Source: https://en.wikipedia.org/wiki/Transamerica_Pyramid)"},
   {name: "Sentinel Building/Columbus Tower", address: "916 Kearny Street, San Francisco, CA", description: "Columbus Tower, also known as the Sentinel Building is a mixed-use building in San Francisco, California, completed in 1907. The distinctive copper-green Flatiron style structure is bounded by Columbus Avenue, Kearny Street and Jackson Street, straddling the North Beach, Chinatown, and Financial districts of the city. Much of the building is occupied by film studio American Zoetrope, and the ground floor houses a cafe named after the company. The Sentinel Building is San Francisco Designated Landmark No. 33. (Source: https://en.wikipedia.org/wiki/Columbus_Tower_(San_Francisco))"},
   {name: "The DeYoung Building/Old Chronicle Building", address: "690 Geary Street, San Francisco, CA", description: "When this sandstone and brick Richardson Romanesque building was completed in 1889, it was San Francisco's first skyscraper and the tallest building on the west coast. Designed for the San Francisco Chronicle by the Chicago firm of Burnham & Root, the building shared newspaper corner with the Hearst and Call buildings as well as Lotta's Fountain. (Source: http://noehill.com/sf/landmarks/sf243.asp)"},
-  {name: "Hunter-Dunlin Building", address: "111 Sutter Street, San Francisco, CA", description: "The Hunter-Dulin Building is a 25-story, 94 m (308 ft) class A office building in the financial district of San Francisco, California. The building is listed on the National Register of Historic Places.[6] The building was totally restored and renovated between 1999 and 2001. (Source: https://en.wikipedia.org/wiki/Hunter-Dulin_Building)"},
+  {name: "Hunter-Dulin Building", address: "111 Sutter Street, San Francisco, CA", description: "The Hunter-Dulin Building is a 25-story, 94 m (308 ft) class A office building in the financial district of San Francisco, California. The building is listed on the National Register of Historic Places.[6] The building was totally restored and renovated between 1999 and 2001. (Source: https://en.wikipedia.org/wiki/Hunter-Dulin_Building)"},
   {name: "The Pacific Bell Building", address: "140 New Montgomery Street, San Francisco, CA", description: "140 New Montgomery Street, also known as The Pacific Telephone Building, and, after 1984, as The Pacific Bell Building or The PacBell Building, in San Francisco's South of Market district, is an Art Deco office tower. The 26-floor building was designed to consolidate numerous smaller buildings and outdated offices into a modern headquarters for The Pacific Telephone & Telegraph Co.[3] When opened in 1925, The Pacific Telephone Building was San Francisco's first significant skyscraper development, and was the tallest building in San Francisco until the Russ Building matched its height in 1927.[1] The building was the first high-rise south of Market Street, and along with the Russ Building, remained the city's tallest until it was overtaken by 650 California Street in 1964. AT&T sold the building in 2007, and as of 2013, Internet company Yelp is the main tenant. (Source: ******)"}
+])
+
+User.create([
+  {name: "Cindy", email: "c@c.com", password: "expoTop"}, {name: "Nuranne", email: "n@n.com", password: "atomKat"}, {name: "Aly", email: "a@a.com", password: "beefWater"}
 ])
