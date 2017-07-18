@@ -61,3 +61,6 @@ gem 'geocoder'
 
 # Gmaps
 gem 'gmaps4rails'
+
+# will_paginate
+gem 'will_paginate', '~> 3.1.0'
