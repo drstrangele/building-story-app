@@ -5,7 +5,3 @@
 <%= render 'mainpage/map' %>
 
 <%= render 'mainpage/cards' %>
-
-<% @buildings.each do |b| %>
-  <%= link_to b.name, building_path(b) %>
-<% end %>
