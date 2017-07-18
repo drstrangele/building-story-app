@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @building = Building.find_by(params[:id])
+    @building = Building.find_by_id(params[:building_id])
     s = story_params
     s[:building_id] = @building.id
     @story = Story.new(s)
