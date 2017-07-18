@@ -5,7 +5,7 @@
         <div class="row display-flex">
           <div class="col-xs-10 col-md-4 building-tops">
             <div class="thumbnail">
-              <%= image_tag('225bush.jpg', style: 'height:100%; width:100%;', class: 'pictureme') %>
+              <%= image_tag(@building.main_photo, style: 'height:100%; width:100%;', class: 'pictureme') %>
               <div class="caption"></div>
             </div>
           </div>
@@ -34,18 +34,15 @@
 <% @stories.each do |s| %>
 <div class="container">
   <div class="stories">
-      <% s.photos.each do |g| %>
-        <%= image_tag src=g.img.url, width: "100px" %>
-      <% end %>
     <p><%= s.id %>!</p>
     <p>Title: <%= link_to s.title, building_story_path(@building, s) %></p><br/>
         <p>Story: <%= s.description %></p><br/>
         <% if is_owner?(s) %>
-        <div class="center">
-          <%= link_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default clear-me' %>
-          <%= link_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default clear-me",  data: { confirm: "Are you sure you want to delete?" } %>
-        </div>
-        <% end %>
+          <div class="center">
+            <%= link_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default clear-me' %>
+            <%= link_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default clear-me",  data: { confirm: "Are you sure you want to delete?" } %>
+          </div>
+  <% end %>
   </div>
 </div>
 <% end %>
