@@ -13,7 +13,8 @@
 
       <%= render partial: '/stories/form', object: form %>
       <%= form.hidden_field :user_id, :value => "#{current_user.id}" %>
-      <%= form.file_field :img %>
+
+      <%= form.file_field :img, class: 'btn btn-default' %>
     <div class="submit-field">
       <%= form.submit "Submit New Story", class: 'btn btn-default'%>
     </div>
