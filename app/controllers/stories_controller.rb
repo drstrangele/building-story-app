@@ -17,8 +17,7 @@ class StoriesController < ApplicationController
     s[:building_id] = @building.id
     @story = Story.new(s)
     if @story.save
-      p = photo_params
-      p[:story_id] = @story
+      p = {img: params[:story][:img], story: @story}
       Photo.create(p)
       flash[:notice] = "Story saved successfully."
     else
@@ -59,7 +58,7 @@ class StoriesController < ApplicationController
   end
 
   def photo_params
-    params.require(:story).permit(:img)
+    params.require(:story).permit(:title, :description, :user_id, :img)
   end
 
 end
