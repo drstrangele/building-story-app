@@ -27,7 +27,6 @@
   </div>
 </div>
 
-
 <div class="container">
   <div class="new-btn">
     <%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new", class: 'btn btn-default pretty-me' %>
@@ -35,14 +34,13 @@
   <div class="stories">
     <% @stories.each do |s| %>
     <h1><%= s.id %>!</h1>
-    <p><%= link_to s.title, building_story_path(@building, s) %><br //>
-      <p>
+    <p><%= link_to s.title, building_story_path(@building, s) %><br />
         <%= s.description %><br/>
         <% if is_owner?(s) %>
-        <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default pretty-me' %>
-        <%= button_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default pretty-me",  data: { confirm: "Are you sure you want to delete?" } %>
+          <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default pretty-me' %>
+          <%= button_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default pretty-me",  data: { confirm: "Are you sure you want to delete?" } %>
         <% end %>
-      </div>
-      <hr/>
-      <% end %>
-    </div>
+  </div>
+  <hr/>
+    <% end %>
+</div>
