@@ -1,12 +1,11 @@
-<h1>Add New Photo to <%= @story.title %> </h1>
-
-<%= form_for @photo, url: "/buildings/#{@building.id}/stories/#{@story.id}/photos", method: "post", html: { multipart: true } do |f| %>
-  <div>
-    <%= f.file_field :img %>
-  </div>
-
-  <div>
-    <%= f.submit 'Upload Photo' %>
-  </div>
-
-<% end %>
+<div class="new-photo-container" >
+  <%= form_for @photo, url: "/buildings/#{@building.id}/stories/#{@story.id}/photos", method: "post", html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-story-f', multipart: true } do |f| %>
+    <div class='new-story-form col-sm-offset-2 col-sm-8'>
+      <h2>Add New Photo to <%= @story.title %> </h2>
+      <%= f.file_field :img %>
+      <div class="submit-field">
+        <%= f.submit 'Upload Photo', class: 'btn btn-default' %>
+      </div>
+    </div>
+  <% end %>
+</div>
