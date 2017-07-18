@@ -8,6 +8,10 @@ body {
   font-family: 'Merriweather', serif;
 }
 
+p {
+  padding: 0;
+}
+
 .show-me {
   height: 800px;
 }
@@ -85,7 +89,7 @@ body {
   border-radius: 0;
   border: none;
   border-top: 5px solid transparent;
-  background-color: #f8f8f8;
+  background-color: rgb(44, 189, 154);
   -webkit-box-shadow: none;
   box-shadow: none;
   padding-top: 0;
@@ -225,6 +229,10 @@ body {
   margin-top: 15%;
 }
 
+/**********************************
+ CSS for stories on building page
+***********************************/
+
 .new-btn {
   text-align: center;
   margin: 10px 0;
@@ -243,8 +251,8 @@ body {
   border: transparent;
 }
 
-.center {
-  text-align: center;
+.icons {
+  text-align: right;
 }
 
 .stories {
