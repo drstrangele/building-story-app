@@ -1,18 +1,20 @@
 <div class="container-fluid plans">
   <div class="row show-me">
-    <div class="col-md-6 blue">
+    <div class="col-xs col-md-6 blue">
       <div class="container">
         <div class="row display-flex">
           <div class="col-xs-10 col-md-4 building-tops">
             <div class="thumbnail">
-              <%= image_tag(@building.main_photo, style: 'height:100%; width:100%;', class: 'pictureme') %>
-              <div class="caption"></div>
+              <%= image_tag(@building.main_photo) %>
             </div>
           </div>
         </div>
       </div>
+      <div class="buildfacts">
+        <p><%= @building.description %></p>
+      </div>
     </div>
-    <div class="col-md-6 red">
+    <div class="col-xs col-md-6 red">
       <div class="building-photos">
         <h1><%= @building.name %></h1>
         <div class="fotorama" data-nav="thumbs">
