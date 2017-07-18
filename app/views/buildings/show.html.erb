@@ -45,8 +45,8 @@
       <% s.photos.each do |g| %>
         <%= image_tag src=g.img.url, width: "100px" %>
       <% end %>
-    <p>Title: <%= link_to s.title, building_story_path(@building, s) %></p><br/>
-        <p>Story: <%= s.description %></p><br/>
+    <p>Title: <%= link_to s.title, building_story_path(@building, s) %></p>
+        <p>Story: <%= s.description %></p>
         <% if is_owner?(s) %>
         <% end %>
   </div>
