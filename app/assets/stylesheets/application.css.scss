@@ -29,9 +29,9 @@ body {
 
 .red {
   background-image: image-url("buildingplans.jpg");
-  background-size:cover;
+  // background-size:cover;
   background-repeat:no-repeat;
-  background-attachment:fixed;
+  // background-attachment:fixed;
   height: 800px;
 }
 
@@ -223,6 +223,11 @@ body {
 
 .edit-story-f {
   margin-top: 15%;
+}
+
+// Pagination
+.pagination{
+text-align: center;
 }
 
 .new-btn {
