@@ -34,7 +34,6 @@
 <% @stories.each do |s| %>
 <div class="container">
   <div class="stories">
-    <p><%= s.id %>!</p>
     <p>Title: <%= link_to s.title, building_story_path(@building, s) %></p><br/>
         <p>Story: <%= s.description %></p><br/>
         <% if is_owner?(s) %>

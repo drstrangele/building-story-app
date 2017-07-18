@@ -230,8 +230,9 @@ body {
   text-align: center;
 }
 
-.pagination {
+.paginate .pagination li span, .paginate .pagination li a {
   background-color: rgb(44, 189, 154);
+  color: black;
 }
 
 .new-btn {
