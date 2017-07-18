@@ -50,4 +50,4 @@
 </div>
 <% end %>
 
-<%= will_paginate @stories %>
+<div class='paginate'><%= will_paginate @stories, renderer: BootstrapPagination::Rails %></div>

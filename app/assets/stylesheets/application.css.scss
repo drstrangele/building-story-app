@@ -29,9 +29,9 @@ body {
 
 .red {
   background-image: image-url("buildingplans.jpg");
-  background-size:cover;
+  // background-size:cover;
   background-repeat:no-repeat;
-  background-attachment:fixed;
+  // background-attachment:fixed;
   height: 800px;
 }
 
@@ -228,6 +228,14 @@ body {
 /**********************************
  CSS for stories on building page
 ***********************************/
+// Pagination
+.paginate{
+  text-align: center;
+}
+
+.pagination {
+  background-color: rgb(44, 189, 154);
+}
 
 .new-btn {
   text-align: center;
