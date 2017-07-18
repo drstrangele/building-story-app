@@ -4,6 +4,8 @@
 
 <p><%= @story.description %></p>
 
-<%= render @story.photos %>
+<%= @story.photos.each do |pic| %>
+  <%= image_tag src=pic.img.url %>
+<% end %>
 
 <%= link_to "Add Photo", new_building_story_photo_path(@building, @story) %>

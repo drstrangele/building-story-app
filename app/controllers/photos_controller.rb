@@ -12,7 +12,8 @@ class PhotosController < ApplicationController
 
   def create
     @story = Story.find_by_id(params[:story_id])
-    @photo = Photo.new(photo_params)
+    p = {img: params[:story][:img], story: @story}
+    @photo = Photo.new(p)
     if @photo.save
       flash[:notice] = "Successfully added new photo!"
     else
