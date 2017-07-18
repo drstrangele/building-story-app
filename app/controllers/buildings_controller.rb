@@ -19,8 +19,6 @@ class BuildingsController < ApplicationController
   def show
     @building = Building.find_by_id(params[:id])
     @stories = @building.stories
-    @story = Story.find_by(params[:story_id])
-    @photos = @building.photos
   end
 
   def edit

@@ -1,18 +1,24 @@
 <%= @building.name %><br />
 <%= @building.address %><br />
 
+
+
 <h3>STORIES:</h3><br />
 <%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new", class: 'btn btn-default' %>
 
-<% @stories.each do |s| %>
+
+  <% @stories.each do |s| %>
     <div>
       <%= link_to s.title, building_story_path(@building, s) %><br />
       <%= s.description %><br />
       <%= s.id %>
+      <% s.photos.each do |g| %>
+        <%= image_tag src=g.img.url %>
+      <% end %>
       <% if is_owner?(s) %>
         <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default' %>
         <%= button_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default",  data: { confirm: "Are you sure you want to delete?" } %>
       <% end %>
     </div>
     <hr />
-<% end %>
+  <% end %>
