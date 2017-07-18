@@ -8,6 +8,33 @@ body {
   font-family: 'Merriweather', serif;
 }
 
+.show-me {
+  height: 700px;
+}
+
+.building-tops {
+  top: 90px;
+  left: 7%;
+}
+
+.building-photos{
+  margin-top: 20%;
+  text-align: center;
+}
+
+.blue {
+  background-color: rgb(108, 108, 108);
+  height: 700px;
+}
+
+.red {
+  background-image: image-url("buildingplans.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height: 700px;
+}
+
 /***************
  css for navbar
 ****************/
@@ -28,8 +55,8 @@ body {
 #custom-nav .dropdown-menu {
   border-radius: 0;
   border: none;
-  border-top: 5px solid transparent;
-  background-color: transparent;
+  border-top: 5px #f8f8f8;
+  background-color: #f8f8f8;
   -webkit-box-shadow: none;
   box-shadow: none;
   padding-top: 0;
@@ -47,7 +74,7 @@ body {
   color: black;
   top: 0;
   min-width: 100%;
-  background-color: #f8f8f8;
+  background-color: rgb(44, 189, 154);
   opacity: 0.9;
   -webkit-transition: background .5s ease-in-out, opacity .5s ease;
   -moz-transition: background .5s ease-in-out, opacity .5s ease;
@@ -98,11 +125,11 @@ body {
   margin-bottom: 20px;
 }
 
-
 /**********************
   css for image cards
 ***********************/
 .row.display-flex {
+  height: 500px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -110,19 +137,6 @@ body {
 .thumbnail {
   height: 100%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.thumbnail .caption {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.thumbnail image {
-  height: 300px;
 }
 
 
@@ -209,4 +223,19 @@ body {
 
 .edit-story-f {
   margin-top: 15%;
+.new-btn {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.pretty-me {
+  background-color: rgb(44, 189, 154);
+}
+
+.stories {
+  margin: auto;
+  width: 75%;
+  border: 3px solid rgb(44, 189, 154);
+  border-radius: 25px;
+  padding: 30px;
 }
