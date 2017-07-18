@@ -18,7 +18,7 @@ class BuildingsController < ApplicationController
 
   def show
     @building = Building.find_by_id(params[:id])
-    @stories = @building.stories
+    @stories = @building.stories.paginate(:page => params[:page], :per_page => 5)
   end
 
   def edit
