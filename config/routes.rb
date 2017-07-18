@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :buildings do
     resources :stories do
-      resources :photos
+      resources :photos, shallow: true
     end
   end
 
