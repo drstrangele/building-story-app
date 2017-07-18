@@ -9,7 +9,7 @@ body {
 }
 
 .show-me {
-  height: 700px;
+  height: 800px;
 }
 
 .building-tops {
@@ -24,7 +24,7 @@ body {
 
 .blue {
   background-color: rgb(108, 108, 108);
-  height: 700px;
+  height: 800px;
 }
 
 .red {
@@ -32,7 +32,7 @@ body {
   background-size:cover;
   background-repeat:no-repeat;
   background-attachment:fixed;
-  height: 700px;
+  height: 800px;
 }
 
 /***************
@@ -223,6 +223,7 @@ body {
 
 .edit-story-f {
   margin-top: 15%;
+}
 .new-btn {
   text-align: center;
   margin: 10px 0;
@@ -232,10 +233,23 @@ body {
   background-color: rgb(44, 189, 154);
 }
 
+.button_to {
+  display: inline-block;
+}
+
+.clear-me {
+  background-color: transparent;
+  border: transparent;
+}
+
+.center {
+  text-align: center;
+}
+
 .stories {
-  margin: auto;
+  margin: 10px auto;
   width: 75%;
   border: 3px solid rgb(44, 189, 154);
   border-radius: 25px;
-  padding: 30px;
+  padding: 10px 20px;
 }
