@@ -1,20 +1,24 @@
 <div class="container-fluid plans">
   <div class="row show-me">
-    <div class="col-md-6 blue">
+    <div class="col-xs col-md-6 blue">
       <div class="container">
         <div class="row display-flex">
           <div class="col-xs-10 col-md-4 building-tops">
             <div class="thumbnail">
-              <%= image_tag(@building.main_photo, style: 'height:100%; width:100%;', class: 'pictureme') %>
-              <div class="caption"></div>
+              <%= image_tag(@building.main_photo) %>
             </div>
           </div>
         </div>
       </div>
+      <div class="buildfacts">
+        <p><%= @building.description %></p>
+      </div>
     </div>
-    <div class="col-md-6 red">
+    <div class="col-xs col-md-6 red">
       <div class="building-photos">
-        <h1><%= @building.name %></h1>
+        <div class="nameme">
+          <h1><%= @building.name %></h1>
+        </div>
         <div class="fotorama" data-nav="thumbs">
           <% @stories.each do |s| %>
             <% s.photos.each do |g| %>
@@ -34,15 +38,18 @@
 <% @stories.each do |s| %>
 <div class="container">
   <div class="stories">
-    <p><%= s.id %>!</p>
-    <p>Title: <%= link_to s.title, building_story_path(@building, s) %></p><br/>
-        <p>Story: <%= s.description %></p><br/>
-        <% if is_owner?(s) %>
-          <div class="center">
-            <%= link_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default clear-me' %>
-            <%= link_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default clear-me",  data: { confirm: "Are you sure you want to delete?" } %>
-          </div>
-  <% end %>
+    <div class="icons">
+      <% if is_owner?(s) %>
+        <%= link_to edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default clear-me' do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default clear-me",  data: { confirm: "Are you sure you want to delete?" } do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <p>Title: <%= link_to s.title, building_story_path(@building, s) %></p>
+    <p>Story: <%= s.description %></p>
   </div>
 </div>
 <% end %>
