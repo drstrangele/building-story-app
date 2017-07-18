@@ -34,6 +34,9 @@
   </div>
   <div class="stories">
     <% @stories.each do |s| %>
+      <% s.photos.each do |g| %>
+        <%= image_tag src=g.img.url, width: "100px" %>
+      <% end %>
     <h1><%= s.id %>!</h1>
     <p><%= link_to s.title, building_story_path(@building, s) %><br //>
       <p>
