@@ -16,17 +16,16 @@
       <div class="building-photos">
         <h1><%= @building.name %></h1>
         <div class="fotorama" data-nav="thumbs">
-          <%= image_tag('225front.jpg') %>
-          <%= image_tag('225oil.jpg') %>
-          <%= image_tag('225crowd.jpg') %>
-          <%= image_tag('225top.jpg') %>
-          <%= image_tag('225post.jpg') %>
+          <% @stories.each do |s| %>
+            <% s.photos.each do |g| %>
+              <%= image_tag src=g.img.url %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <div class="container">
   <div class="new-btn">
@@ -49,3 +48,4 @@
       <% end %>
   </div>
 </div>
+
