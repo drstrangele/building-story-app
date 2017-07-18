@@ -1,11 +1,16 @@
-<h1>STORY SHOW PAGE</h1>
+<div class="stories-container">
+  <div class="col-sm-offset-1 col-sm-10 stories">
 
-<h3><%= @story.title %></h3>
+  <h1>STORY SHOW PAGE</h1>
 
-<p><%= @story.description %></p>
+  <h3><%= @story.title %></h3>
 
-<%= @story.photos.each do |pic| %>
-  <%= image_tag src=pic.img.url %>
-<% end %>
+  <p><%= @story.description %></p>
 
-<%= link_to "Add Photo", new_building_story_photo_path(@building, @story) %>
+  <%= @story.photos.each do |pic| %>
+    <%= image_tag src=pic.img.url %>
+  <% end %>
+
+  <%= link_to "Add Photo", new_building_story_photo_path(@building, @story) %>
+  </div>
+</div>

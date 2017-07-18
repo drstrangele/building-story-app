@@ -235,6 +235,17 @@ body {
   color: black;
 }
 
+// Story show page
+.stories-container {
+  background-image: image-url("buildingplans.jpg");
+  // background-size:cover;
+  background-repeat:no-repeat;
+  // background-attachment:fixed;
+  height: 800px;
+}
+
+
+
 .new-btn {
   text-align: center;
   margin: 10px 0;
