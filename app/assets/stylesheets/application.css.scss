@@ -8,38 +8,11 @@ body {
   font-family: 'Merriweather', serif;
 }
 
-.show-me {
-  height: 800px;
-}
-
-.building-tops {
-  top: 90px;
-  left: 7%;
-}
-
-.building-photos{
-  margin-top: 20%;
-  text-align: center;
-}
-
-.blue {
-  background-color: rgb(108, 108, 108);
-  height: 800px;
-}
-
-.red {
-  background-image: image-url("buildingplans.jpg");
-  // background-size:cover;
-  background-repeat:no-repeat;
-  // background-attachment:fixed;
-  height: 800px;
-}
-
 /***************
  css for navbar
 ****************/
 #custom-nav {
-  color: white;
+  color: orange;
   height: 70px;
   background-color: rgba(0,0,0,0);
   border: 0;
@@ -50,6 +23,10 @@ body {
   -webkit-transition: background .5s ease-in-out, opacity .5s ease;
   -moz-transition: background .5s ease-in-out, opacity .5s ease;
   transition: background .5s ease-in-out, opacity .5s ease;
+}
+
+#custom-nav a {
+  color: orange;
 }
 
 #custom-nav .dropdown-menu {
@@ -85,7 +62,7 @@ body {
   border-radius: 0;
   border: none;
   border-top: 5px solid transparent;
-  background-color: #f8f8f8;
+  background-color: rgb(44, 189, 154);
   -webkit-box-shadow: none;
   box-shadow: none;
   padding-top: 0;
@@ -135,10 +112,17 @@ body {
 }
 
 .thumbnail {
-  height: 100%;
+  height: 500px;
+  display: table;
   text-align: center;
 }
 
+.thumbnail img {
+  height: 100%;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
 
 // Sign Up User Form:
 
@@ -225,6 +209,9 @@ body {
   margin-top: 15%;
 }
 
+/**********************************
+ CSS for stories on building page
+***********************************/
 // Pagination
 .paginate{
   text-align: center;
@@ -280,8 +267,8 @@ body {
   border: transparent;
 }
 
-.center {
-  text-align: center;
+.icons {
+  text-align: right;
 }
 
 .stories {
@@ -290,6 +277,42 @@ body {
   border: 3px solid rgb(44, 189, 154);
   border-radius: 25px;
   padding: 10px 20px;
+}
+
+.show-me {
+  height: 850px;
+}
+
+.building-tops {
+  top: 90px;
+  left: 7%;
+}
+
+.building-photos{
+  margin-top: 20%;
+  text-align: center;
+}
+
+.blue {
+  background-color: rgb(108, 108, 108);
+  height: 900px;
+}
+
+.red {
+  background-image: image-url("buildingplans.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  // background-attachment:fixed;
+  height: 900px;
+}
+
+.buildfacts {
+  padding-top: 100px;
+  color: orange;
+}
+
+.nameme {
+  background-color: rgb(199, 196, 194)
 }
 
 // New Story-Photo Form:
