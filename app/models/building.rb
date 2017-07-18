@@ -5,7 +5,4 @@ class Building < ApplicationRecord
   geocoded_by :address, :latitude  => :lat, :longitude => :long
   after_validation :geocode
 
-  # def address
-  #   [street, city, state].compact.join(', ')
-  # end
 end
