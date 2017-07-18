@@ -238,13 +238,29 @@ body {
 // Story show page
 .stories-container {
   background-image: image-url("buildingplans.jpg");
-  // background-size:cover;
+  background-size:cover;
   background-repeat:no-repeat;
-  // background-attachment:fixed;
-  height: 800px;
+  background-attachment:fixed;
+  height: 100%;
+  height: 100vh;
+  color: white;
 }
 
-
+.stories-show {
+  margin: auto;
+  margin: 10%;
+  width: 75%;
+  border: 3px solid rgb(44, 189, 154);
+  border-radius: 25px;
+  padding: 10px 20px;
+  background-color: #eee;
+  position: relative;
+}
+// position: relative;
+// padding: 20px 0 50px 0;
+// height: 100%;
+// z-index: 0;
+// }
 
 .new-btn {
   text-align: center;
