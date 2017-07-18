@@ -1,18 +1,19 @@
 <div class="stories-container">
 
-      <div class="stories-show">
-          <h1>STORY SHOW PAGE</h1>
+    <div class="stories-show">
 
-          <h3><%= @story.title %></h3>
+      <h4><%= @story.title %></h4>
 
-          <p><%= @story.description %></p>
+      <p><%= @story.description %></p>
 
-          <% @story.photos.each do |pic| %>
-            <%= image_tag src=pic.img.url %>
-          <% end %>
+        <% @story.photos.each do |pic| %>
+          <%= image_tag src=pic.img.url, width: '200px'%><br />
+        <% end %>
 
-          <%= link_to "Add Photo", new_building_story_photo_path(@building, @story) %>
+      <%= link_to "Add Photo", new_building_story_photo_path(@building, @story) %>
+      <%= link_to "Back to Building", building_path(@building) %>
 
 
     </div>
+
 </div>
