@@ -27,12 +27,13 @@
   </div>
 </div>
 
+<div class="new-btn">
+  <%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new", class: 'btn btn-default pretty-me' %>
+</div>
+
+<% @stories.each do |s| %>
 <div class="container">
-  <div class="new-btn">
-    <%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new", class: 'btn btn-default pretty-me' %>
-  </div>
   <div class="stories">
-    <% @stories.each do |s| %>
       <% s.photos.each do |g| %>
         <%= image_tag src=g.img.url, width: "100px" %>
       <% end %>
@@ -41,12 +42,12 @@
         <p>Story: <%= s.description %></p><br/>
         <% if is_owner?(s) %>
         <div class="center">
-          <%= button_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default clear-me'%>
-          <%= button_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default clear-me",  data: { confirm: "Are you sure you want to delete?" } %>
+          <%= link_to "Edit Story", edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default clear-me' %>
+          <%= link_to "Delete Story", "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default clear-me",  data: { confirm: "Are you sure you want to delete?" } %>
         </div>
         <% end %>
-      <% end %>
   </div>
 </div>
+<% end %>
 
 <%= will_paginate @stories %>
