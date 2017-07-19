@@ -31,13 +31,13 @@
   </div>
 </div>
 
+<div class="new-btn">
+  <%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new", class: 'btn btn-default pretty-me' %>
+</div>
 
 <% @stories.each do |s| %>
 <div class="container another-one">
   <div class="stories">
-    <div class="new-btn">
-      <%= button_to "Add New Story", new_building_story_path(@building), method: "get", action: "new", class: 'btn btn-default pretty-me' %>
-    </div>
     <div class="icons">
         <%= link_to edit_building_story_path(@building, s.id), method: "get", action: "edit", class: 'btn btn-default clear-me' do %>
           <i class="fa fa-pencil" aria-hidden="true"></i>
