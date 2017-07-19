@@ -8,7 +8,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <p class="navbar-brand"><%= link_to "What's that building?", root_path, :class => "navbar-link" %></p>
+      <p class="navbar-brand">
+        <%= link_to root_path, :class => "navbar-link" do %>
+          <%= image_tag "WTB4.png" %>
+        <% end %>
+      </p>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
