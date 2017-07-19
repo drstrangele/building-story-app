@@ -18,9 +18,10 @@ class StoriesController < ApplicationController
     @story = Story.new(s)
     if @story.save
       p = {img: params[:story][:img], story: @story}
-      if !s[:img].nil?
+    
         Photo.create(p)
-      end
+
+
         flash[:notice] = "Story saved successfully."
     else
       flash[:error] = @story.errors.full_messages
