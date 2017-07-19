@@ -18,7 +18,7 @@ class StoriesController < ApplicationController
     @story = Story.new(s)
     if @story.save
       p = {img: params[:story][:img], story: @story}
-    
+
         Photo.create(p)
 
 

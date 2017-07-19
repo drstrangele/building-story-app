@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
     @user = User.confirm(user_params)
     if @user
       login(@user)
-      #flash notice - successful login
+      flash[:notice] = "Successful login"
       redirect_to root_path
     else
-      #flash error - login failed
+      flash[:error] = "Login failed"
       redirect_to login_path
     end
   end
