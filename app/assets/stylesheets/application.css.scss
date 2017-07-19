@@ -192,13 +192,6 @@ body {
   color: white;
 }
 
-#flash-entry{
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  color: orangered;
-}
-
 .new-story-f{
   margin-top: 12%;
 }
@@ -254,11 +247,7 @@ body {
   position: relative;
   color: black;
 }
-// position: relative;
-// padding: 20px 0 50px 0;
-// height: 100%;
-// z-index: 0;
-// }
+
 
 .new-btn {
   text-align: center;
@@ -346,5 +335,16 @@ body {
 
 // flash message
 .message {
-  background: pink;
+  background: orangered;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+#flash-entry{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: orangered;
 }

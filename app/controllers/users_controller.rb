@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #flash notice - successfully joined
+      flash[:notice] = "Succesfully Joined"
       login(@user)
       redirect_to root_path
     else
-      #flash error - sign-up failed
+      flash[:error] = "Sign-up Failed"
       redirect_to new_user_path
     end
   end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     if @user.update_attributes(user_params)
       login(@user)
-      #flash notice - user info updated successfully
+      flash[:notice] = "User info update successfully"
       redirect_to root_path
     else
       flash[:error] = @user.errors.full_messages.join(", ")
