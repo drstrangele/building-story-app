@@ -24,11 +24,7 @@ module SessionsHelper
   end
 
   def is_owner? resource
-    if current_user.id && resource.user_id
-     unless current_user.id == resource.user_id
-       flash[:error] = "You are not the owner of this story."
-     end
-   end
+     current_user.id == resource.user_id
   end
 
   def require_ownership

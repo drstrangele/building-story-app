@@ -15,4 +15,5 @@ class User < ApplicationRecord
     @user = User.find_by({email: params[:email]})
     @user ? @user.authenticate(params[:password]) : false
   end
+
 end
