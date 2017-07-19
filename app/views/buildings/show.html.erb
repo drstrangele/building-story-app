@@ -19,8 +19,7 @@
         <h1><%= @building.name %></h1>
       </div>
         <div class="fotorama" data-nav="thumbs"
-        data-width="70%"
-        data-ratio="50/50">
+>
           <% @stories.each do |s| %>
             <% s.photos.each do |g| %>
               <%= image_tag src=g.img.url(:med) %>
