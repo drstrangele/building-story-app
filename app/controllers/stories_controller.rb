@@ -1,8 +1,8 @@
 class StoriesController < ApplicationController
-  before_action :require_login, only: :new
+  before_action :require_login,     only: :new
   before_action :require_ownership, only: [:edit, :update, :destroy]
-  before_action :set_building, only: [:new, :create, :edit, :show, :update]
-  before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_action :set_building,      only: [:show, :new, :create, :edit, :update]
+  before_action :set_story,         only: [:show, :edit, :update, :destroy]
 
   def index
     @stories = Story.all
