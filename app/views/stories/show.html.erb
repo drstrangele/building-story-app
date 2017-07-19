@@ -7,7 +7,7 @@
       <p><%= @story.description %></p>
 
         <% @story.photos.each do |pic| %>
-          <%= image_tag src=pic.img.url, width: '200px'%><br />
+          <%= image_tag src=pic.img.url(:med), width: '200px'%><br />
         <% end %>
 
       <%= link_to "Add Photo", new_building_story_photo_path(@building, @story), class: 'btn btn-default pretty-me' %>

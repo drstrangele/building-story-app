@@ -23,7 +23,7 @@
         data-ratio="50/50">
           <% @stories.each do |s| %>
             <% s.photos.each do |g| %>
-              <%= image_tag src=g.img.url %>
+              <%= image_tag src=g.img.url(:med) %>
             <% end %>
           <% end %>
         </div>
