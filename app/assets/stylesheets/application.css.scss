@@ -8,9 +8,9 @@ body {
   font-family: 'Merriweather', serif;
 }
 
-/***************
- css for navbar
-****************/
+/*********
+ navbar
+**********/
 
 .navbar-brand {
   padding: 0 15px;
@@ -77,9 +77,10 @@ body {
   padding-top: 0;
 }
 
-/******************
- css for jumbotron
-*******************/
+/************
+ jumbotron
+*************/
+
 .jumbotron {
   padding-top: 20%;
   background: image-url("transamerica.jpeg") no-repeat center center;
@@ -91,9 +92,10 @@ body {
 }
 
 
-/************
- css for map
-*************/
+/***************
+  google maps
+****************/
+
 #custom_style {
   margin: auto;
   width: 75%;
@@ -107,8 +109,9 @@ body {
 }
 
 /**********************
-  css for image cards
+  image thumbnails
 ***********************/
+
 .row.display-flex {
   height: 500px;
   display: flex;
@@ -126,78 +129,15 @@ body {
   vertical-align: middle;
 }
 
-// .object-fit_contain { object-fit: contain }
-//
-// .object-fit_fill { object-fit: fill }
-//
-// .object-fit_cover { object-fit: cover }
-//
-// .object-fit_scale-down { object-fit: scale-down }
+/****************
+  forms styling
+*****************/
 
-// Sign Up User Form:
-
-.sign-up-container {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), image-url("blueprints.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  height:100%;
-  height: 100vh;
-  color: white;
-}
-
-.new-form{
-  margin-top: 20%;
-}
-
-// Edit User Form:
-.edit-user-container {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), image-url("blueprints.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  height:100%;
-  height: 100vh;
-  color: white;
-}
-.edit-form-user{
-  margin-top: 20%;
-}
-
-// Login form
-
-.login-container {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), image-url("blueprints.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  height:100%;
-  height: 100vh;
-  color: white;
-}
-
-.login-new-form{
-    margin-top: 20%;
-}
-
-// New Story form
-
-.new-story-container{
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), image-url("blueprints.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  height:100%;
-  height: 100vh;
-  color: white;
-}
-
-.new-story-f{
-  margin-top: 12%;
-}
-
-// Edit story form
-
+.sign-up-container,
+.new-photo-container,
+.new-story-container,
+.edit-user-container,
+.login-container,
 .edit-story-container {
   background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), image-url("blueprints.jpg");
   background-size:cover;
@@ -208,15 +148,28 @@ body {
   color: white;
 }
 
+.new-form,
+.login-new-form,
+.edit-form-user {
+  margin-top: 20%;
+}
+
+.new-story-f{
+  margin-top: 12%;
+}
+
 .edit-story-f {
   margin-top: 15%;
+}
+
+.photo-btn {
+  float: left;
 }
 
 /**********************************
  CSS for stories on building page
 ***********************************/
-// Pagination
-.paginate{
+.paginate {
   text-align: center;
 }
 
@@ -224,30 +177,6 @@ body {
   background-color: rgb(44, 189, 154);
   color: black;
 }
-
-// Story show page
-.stories-container {
-  background-image: image-url("buildingplans.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  height: 100%;
-  height: 100vh;
-  color: white;
-}
-
-.stories-show {
-  margin: auto;
-  top: 200px;
-  width: 75%;
-  border: 3px solid rgb(44, 189, 154);
-  border-radius: 25px;
-  padding: 10px 20px;
-  background-color: #eee;
-  position: relative;
-  color: black;
-}
-
 
 .new-btn {
   text-align: center;
@@ -283,10 +212,6 @@ body {
   padding: 10px 20px;
 }
 
-// .plans {
-//   height: 900px;
-// }
-
 .building-tops {
   top: 90px;
   left: 7%;
@@ -294,14 +219,13 @@ body {
 
 .blue {
   background-color: rgb(108, 108, 108);
-  height: 100%;
+  height: 800px;
 }
 
 .red {
   background-image: image-url("buildingplans.jpg");
   background-size:cover;
   background-repeat:no-repeat;
-  // background-attachment:fixed;
   height: 800px;
 }
 
@@ -318,31 +242,42 @@ body {
   padding: 0;
 }
 
-// New Story-Photo Form:
-.new-photo-container {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), image-url("blueprints.jpg");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  height:100%;
-  height: 100vh;
-  color: white;
-}
-
 .fotorama__wrap {
   margin: 0 auto;
 }
 
-// flash message
+/********************
+ stories show page
+**********************/
+.stories-container {
+  background-image: image-url("buildingplans.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height: 100%;
+  height: 100vh;
+  color: white;
+}
+
+.stories-show {
+  margin: auto;
+  top: 200px;
+  width: 75%;
+  border: 3px solid rgb(44, 189, 154);
+  border-radius: 25px;
+  padding: 10px 20px;
+  background-color: #eee;
+  position: relative;
+  color: black;
+}
+
+/********************
+ flash messages
+**********************/
 .message {
   background: orangered;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   color: white;
-}
-
-.photo-btn {
-  float: left;
-  
 }
