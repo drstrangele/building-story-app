@@ -2,6 +2,7 @@ class StoriesController < ApplicationController
   before_action :require_login, only: :new
   before_action :require_ownership, only:[:edit]
   before_action :set_building, only: [:new, :create, :edit, :show, :update]
+  before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   def index
     @stories = Story.all
@@ -28,22 +29,17 @@ class StoriesController < ApplicationController
   end
 
   def show
-    story_id = params[:id]
-    @story = Story.find_by_id(story_id)
   end
 
   def edit
-    @story = Story.find_by(id: params[:id])
   end
 
   def update
-    @story = Story.find_by_id(params[:id])
     @story.update_attributes(story_params)
     redirect_to building_path(@building)
   end
 
   def destroy
-    @story = Story.find_by(id: params[:id])
     @story.destroy
     redirect_to building_path(@story.building_id)
   end
@@ -60,6 +56,10 @@ class StoriesController < ApplicationController
 
   def set_building
     @building = Building.find_by_id(params[:building_id])
+  end
+
+  def set_story
+    @story = Story.find_by_id(params[:id])
   end
 
 end
