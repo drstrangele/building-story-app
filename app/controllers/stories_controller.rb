@@ -21,7 +21,6 @@ class StoriesController < ApplicationController
 
         Photo.create(p)
 
-
         flash[:notice] = "Story saved successfully."
     else
       flash[:error] = @story.errors.full_messages

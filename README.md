@@ -39,9 +39,10 @@ Aly Shae,  Nuranne Dairkee, Cindy Le
 * gmaps4rails
 * font-awesome-sass
 * fotorama
+* will_paginate
 
 ## Deployment
-Heroku:
+Heroku: https://whatsthatbuilding.herokuapp.com/
 
 ## Acknowledgments
 * Hat tip to our previous vagabond projects for helping us with code
