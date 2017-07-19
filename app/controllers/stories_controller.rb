@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   before_action :require_login, only: :new
   before_action :require_ownership, only:[:edit]
+  before_action :set_building, only: [:new, :create, :edit, :show, :update]
 
   def index
     @stories = Story.all
@@ -8,11 +9,9 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-    @building = Building.find_by_id(params[:building_id])
   end
 
   def create
-    @building = Building.find_by_id(params[:building_id])
     s = story_params
     s[:building_id] = @building.id
     @story = Story.new(s)
@@ -31,16 +30,13 @@ class StoriesController < ApplicationController
   def show
     story_id = params[:id]
     @story = Story.find_by_id(story_id)
-    @building = Building.find_by_id(params[:building_id])
   end
 
   def edit
     @story = Story.find_by(id: params[:id])
-    @building = Building.find_by_id(@story.building_id)
   end
 
   def update
-    @building = Building.find_by_id(params[:building_id])
     @story = Story.find_by_id(params[:id])
     @story.update_attributes(story_params)
     redirect_to building_path(@building)
@@ -48,9 +44,8 @@ class StoriesController < ApplicationController
 
   def destroy
     @story = Story.find_by(id: params[:id])
-    @building = @story.building_id
     @story.destroy
-    redirect_to building_path(@building)
+    redirect_to building_path(@story.building_id)
   end
 
   private
@@ -61,6 +56,10 @@ class StoriesController < ApplicationController
 
   def photo_params
     params.require(:story).permit(:title, :description, :user_id, :img)
+  end
+
+  def set_building
+    @building = Building.find_by_id(params[:building_id])
   end
 
 end
