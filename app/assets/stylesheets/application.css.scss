@@ -217,9 +217,38 @@ body {
   text-align: center;
 }
 
-.pagination {
+.paginate .pagination li span, .paginate .pagination li a {
   background-color: rgb(44, 189, 154);
+  color: black;
 }
+
+// Story show page
+.stories-container {
+  background-image: image-url("buildingplans.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height: 100%;
+  height: 100vh;
+  color: white;
+}
+
+.stories-show {
+  margin: auto;
+  top: 200px;
+  width: 75%;
+  border: 3px solid rgb(44, 189, 154);
+  border-radius: 25px;
+  padding: 10px 20px;
+  background-color: #eee;
+  position: relative;
+  color: black;
+}
+// position: relative;
+// padding: 20px 0 50px 0;
+// height: 100%;
+// z-index: 0;
+// }
 
 .new-btn {
   text-align: center;
