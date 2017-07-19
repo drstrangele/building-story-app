@@ -11,6 +11,15 @@ body {
 /***************
  css for navbar
 ****************/
+
+.navbar-brand {
+  padding: 0 15px;
+}
+
+.navbar-user {
+  top: 17px;
+}
+
 #custom-nav {
   color: orange;
   height: 70px;
@@ -32,8 +41,8 @@ body {
 #custom-nav .dropdown-menu {
   border-radius: 0;
   border: none;
-  border-top: 5px #f8f8f8;
-  background-color: #f8f8f8;
+  border-top: 5px rgb(44, 189, 154);
+  background-color: rgb(44, 189, 154);
   -webkit-box-shadow: none;
   box-shadow: none;
   padding-top: 0;
@@ -48,7 +57,7 @@ body {
 }
 
 #custom-nav.affix {
-  color: black;
+  color: orange;
   top: 0;
   min-width: 100%;
   background-color: rgb(44, 189, 154);
@@ -67,11 +76,6 @@ body {
   box-shadow: none;
   padding-top: 0;
 }
-
-.navbar-user {
-  top: 17px;
-}
-
 
 /******************
  css for jumbotron
@@ -113,16 +117,22 @@ body {
 
 .thumbnail {
   height: 500px;
-  display: table;
   text-align: center;
 }
 
 .thumbnail img {
   height: 100%;
   width: 100%;
-  display: table-cell;
   vertical-align: middle;
 }
+
+// .object-fit_contain { object-fit: contain }
+//
+// .object-fit_fill { object-fit: fill }
+//
+// .object-fit_cover { object-fit: cover }
+//
+// .object-fit_scale-down { object-fit: scale-down }
 
 // Sign Up User Form:
 
@@ -272,6 +282,10 @@ body {
   text-align: right;
 }
 
+.another-one {
+  height: 200px;
+}
+
 .stories {
   margin: 10px auto;
   width: 75%;
@@ -280,23 +294,18 @@ body {
   padding: 10px 20px;
 }
 
-.show-me {
-  height: 850px;
-}
+// .plans {
+//   height: 900px;
+// }
 
 .building-tops {
   top: 90px;
   left: 7%;
 }
 
-.building-photos{
-  margin-top: 20%;
-  text-align: center;
-}
-
 .blue {
   background-color: rgb(108, 108, 108);
-  height: 900px;
+  height: 100%;
 }
 
 .red {
@@ -304,16 +313,20 @@ body {
   background-size:cover;
   background-repeat:no-repeat;
   // background-attachment:fixed;
-  height: 900px;
+  height: 800px;
 }
 
 .buildfacts {
   padding-top: 100px;
+  background-color: rgb(108, 108, 108);
   color: orange;
 }
 
 .nameme {
-  background-color: rgb(199, 196, 194)
+  background-color: rgb(199, 196, 194);
+  text-align: center;
+  margin-top: 20%;
+  padding: 0;
 }
 
 // New Story-Photo Form:
@@ -327,6 +340,9 @@ body {
   color: white;
 }
 
+.fotorama__wrap {
+  margin: 0 auto;
+}
 
 // flash message
 .message {
