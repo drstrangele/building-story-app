@@ -45,7 +45,7 @@
         <% end %>
         <%= link_to "/buildings/#{@building.id}/stories/#{s.id}", method: "delete", action: "destroy", class: "btn btn-default clear-me",  data: { confirm: "Are you sure you want to delete?" } do %>
           <i class="fa fa-trash" aria-hidden="true"></i>
-        
+
       <% end %>
     </div>
     <p>Title: <%= link_to s.title, building_story_path(@building, s) %></p>
