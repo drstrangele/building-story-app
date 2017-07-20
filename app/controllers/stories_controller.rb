@@ -13,19 +13,14 @@ class StoriesController < ApplicationController
   end
 
   def create
-    s = story_params
-    s[:building_id] = @building.id
-    @story = Story.new(s)
+    @story = Story.new(story_params)
     if @story.save
-      p = {img: params[:story][:img], story: @story}
-
-        Photo.create(p)
-
-        flash[:notice] = "Story saved successfully."
+      @story.photos.create(photo_params) # TODO: error handling
+      flash[:notice] = "Story saved successfully."
     else
       flash[:error] = @story.errors.full_messages
     end
-    redirect_to building_path(@building)
+    redirect_to building_path(@story.building)
   end
 
   def show
@@ -47,11 +42,11 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :description, :user_id)
+    params.require(:story).permit(:title, :description, :user_id, :building_id)
   end
 
   def photo_params
-    params.require(:story).permit(:title, :description, :user_id, :img)
+    params.require(:story).permit(:img)
   end
 
   def set_building

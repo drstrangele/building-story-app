@@ -11,6 +11,7 @@
     </div>
       <%= render partial: '/stories/form', object: form %>
       <%= form.hidden_field :user_id, :value => "#{current_user.id}" %>
+      <%= form.hidden_field :building_id, :value => "#{@building.id}" %>
       <div class = "photo-btn">
           <%= form.file_field :img, class: 'btn btn-default'%>
       </div>
