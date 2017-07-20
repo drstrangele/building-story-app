@@ -16,10 +16,11 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
     if @story.save
       flash[:notice] = "Story saved successfully."
+      redirect_to building_path(@story.building)
     else
-      flash[:error] = @story.errors.full_messages
+      flash.now[:error] = @story.errors.full_messages
+      render :new
     end
-    redirect_to building_path(@story.building)
   end
 
   def show
@@ -29,13 +30,18 @@ class StoriesController < ApplicationController
   end
 
   def update
-    @story.update_attributes(story_params)
-    redirect_to building_path(@building)
+    if @story.update(story_params)
+      flash[:notice] = "Story updated successfully."
+      redirect_to building_path(@story.building)
+    else
+      flash.now[:error] = @story.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy
     @story.destroy
-    redirect_to building_path(@story.building_id)
+    redirect_to building_path(@story.building)
   end
 
   private
