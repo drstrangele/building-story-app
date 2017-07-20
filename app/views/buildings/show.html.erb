@@ -21,7 +21,7 @@
         <div class="fotorama" data-nav="thumbs">
           <% @stories.each do |s| %>
             <% s.photos.each do |g| %>
-              <%= image_tag src=g.img.url(:med)%>
+              <%= image_tag g.img.url(:med)%>
             <% end %>
           <% end %>
         </div>
