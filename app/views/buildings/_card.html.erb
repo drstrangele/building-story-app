@@ -1,0 +1,8 @@
+<div class="col-xs-10 col-md-4">
+  <div class="thumbnail">
+      <%= image_tag(building.main_photo, style: 'height:92%; width:100%;') %>
+      <div class="caption">
+        <p> <%= link_to building.name, building_path(building.id) %> </p>
+      </div>
+  </div>
+</div>

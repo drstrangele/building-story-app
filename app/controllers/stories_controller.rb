@@ -1,66 +1,56 @@
 class StoriesController < ApplicationController
-  before_action :require_login, only: :new
-  before_action :require_ownership, only:[:edit]
+  before_action :require_login,     only: :new
+  before_action :require_ownership, only: [:edit, :update, :destroy]
+  before_action :set_story,         only: [:show, :edit, :update, :destroy]
 
   def index
     @stories = Story.all
   end
 
   def new
-    @story = Story.new
-    @building = Building.find_by_id(params[:building_id])
+    @story = Story.new(photos: [Photo.new])
   end
 
   def create
-    @building = Building.find_by_id(params[:building_id])
-    s = story_params
-    s[:building_id] = @building.id
-    @story = Story.new(s)
+    @story = Story.new(story_params)
     if @story.save
-      p = {img: params[:story][:img], story: @story}
-
-        Photo.create(p)
-
-        flash[:notice] = "Story saved successfully."
+      flash[:notice] = "Story saved successfully."
+      redirect_to building_path(@story.building)
     else
-      flash[:error] = @story.errors.full_messages
+      flash.now[:error] = @story.errors.full_messages
+      render :new
     end
-    redirect_to building_path(@building)
   end
 
   def show
-    story_id = params[:id]
-    @story = Story.find_by_id(story_id)
-    @building = Building.find_by_id(params[:building_id])
   end
 
   def edit
-    @story = Story.find_by(id: params[:id])
-    @building = Building.find_by_id(@story.building_id)
   end
 
   def update
-    @building = Building.find_by_id(params[:building_id])
-    @story = Story.find_by_id(params[:id])
-    @story.update_attributes(story_params)
-    redirect_to building_path(@building)
+    if @story.update(story_params)
+      flash[:notice] = "Story updated successfully."
+      redirect_to building_path(@story.building)
+    else
+      flash.now[:error] = @story.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy
-    @story = Story.find_by(id: params[:id])
-    @building = @story.building_id
     @story.destroy
-    redirect_to building_path(@building)
+    redirect_to building_path(@story.building)
   end
 
   private
 
   def story_params
-    params.require(:story).permit(:title, :description, :user_id)
+    params.require(:story).permit(:title, :description, :user_id, :building_id, photos_attributes: [:img])
   end
 
-  def photo_params
-    params.require(:story).permit(:title, :description, :user_id, :img)
+  def set_story
+    @story = Story.find_by_id(params[:id])
   end
 
 end

@@ -1,6 +1,6 @@
 
 <div id='edit-story' class='edit-story-container'>
-  <%= form_for([@building, @story], method: "patch", action: "update", html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 edit-story-f' } ) do |form| %>
+  <%= form_for([@story.building, @story], method: "patch", action: "update", html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 edit-story-f' } ) do |form| %>
   <div class='edit-story-form col-sm-offset-2 col-sm-8'>
     <div id="flash-entry">
       <% flash.each do |key, value| %>
@@ -9,7 +9,7 @@
     </div>
       <%= render partial: '/stories/form', object: form %>
       <%= form.hidden_field :user_id, :value => "#{current_user.id}" %>
-      <%= form.hidden_field :building_id, :value => @building %>
+      <%= form.hidden_field :building_id, :value => @story.building %>
       <%= form.hidden_field :id, :value => @story.id %>
 
     <div class='submit-field'>

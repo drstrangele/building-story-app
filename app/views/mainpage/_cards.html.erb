@@ -1,28 +1,5 @@
 <div class="container">
   <div class="row display-flex">
-    <div class="col-xs-10 col-md-4">
-      <div class="thumbnail">
-          <%= image_tag(@buildings[0].main_photo, style: 'height:92%; width:100%;') %>
-          <div class="caption">
-            <p> <%= link_to @buildings[0].name, building_path(@buildings[0].id) %> </p>
-          </div>
-      </div>
-    </div>
-    <div class="col-xs-10 col-md-4">
-      <div class="thumbnail">
-          <%= image_tag(@buildings[1].main_photo, style: 'height:92%; width:100%;') %>
-          <div class="caption">
-            <p><%= link_to @buildings[1].name, building_path(@buildings[1].id) %></p>
-          </div>
-      </div>
-    </div>
-    <div class="col-xs-10 col-md-4">
-      <div class="thumbnail">
-          <%= image_tag(@buildings[2].main_photo, style: 'height:92%; width:100%;') %>
-          <div class="caption">
-            <p><%= link_to @buildings[2].name, building_path(@buildings[2].id) %></p>
-          </div>
-      </div>
-    </div>
+    <%= render :partial => "buildings/card", :collection => @buildings, :as => :building %>…
   </div>
 </div>

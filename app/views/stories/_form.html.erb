@@ -7,3 +7,9 @@
   <%= form.label :description %>
   <%= form.text_area :description, :rows => 10, style: 'width:100%', type: 'description', class: 'form-control', :required => true, placeholder: 'Description' %>
 </div>
+
+<div class="photo-btn">
+  <%= form.fields_for :photos do |ff| %>
+    <%= ff.file_field :img, class: 'btn btn-default' %>
+  <% end %>
+</div>
