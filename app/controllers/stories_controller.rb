@@ -9,13 +9,12 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @story = Story.new
+    @story = Story.new(photos: [Photo.new])
   end
 
   def create
     @story = Story.new(story_params)
     if @story.save
-      @story.photos.create(photo_params) # TODO: error handling
       flash[:notice] = "Story saved successfully."
     else
       flash[:error] = @story.errors.full_messages
@@ -42,11 +41,7 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :description, :user_id, :building_id)
-  end
-
-  def photo_params
-    params.require(:story).permit(:img)
+    params.require(:story).permit(:title, :description, :user_id, :building_id, photos_attributes: [:img])
   end
 
   def set_building
