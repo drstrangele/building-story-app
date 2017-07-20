@@ -1,9 +1,9 @@
 
 <div id='new-story' class='new-story-container'>
 
-  <%= form_for(@story, url: building_stories_path(@building), method: "post", html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-story-f' } ) do |form| %>
+  <%= form_for(@story, url: building_stories_path(@story.building), method: "post", html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-story-f' } ) do |form| %>
   <div class='new-story-form col-sm-offset-2 col-sm-8'>
-    <h1><%= @building.name %></h1>
+    <h1><%= @story.building.name %></h1>
     <div id="flash-entry">
       <% flash.each do |key, value| %>
       <div class="flash <%= key %>"><%= value %></div>
@@ -11,11 +11,11 @@
     </div>
       <%= render partial: '/stories/form', object: form %>
       <%= form.hidden_field :user_id, :value => "#{current_user.id}" %>
-      <%= form.hidden_field :building_id, :value => "#{@building.id}" %>
+      <%= form.hidden_field :building_id, :value => "#{@story.building.id}" %>
     <div class="submit-field">
       <%= form.submit "Submit New Story", class: 'btn btn-default'%>
     </div>
-    <%= link_to "Back to Building", building_path(@building), class: 'btn btn-default' %>
+    <%= link_to "Back to Building", building_path(@story.building), class: 'btn btn-default' %>
 
   </div>
   <% end %>
