@@ -2,18 +2,7 @@ class BuildingsController < ApplicationController
 
   def index
     @buildings = Building.all
-    @hash = Gmaps4rails.build_markers(@buildings) do |building, marker|
-      bldg_link = view_context.link_to building.name, building_path(building)
-      marker.lat building.lat
-      marker.lng building.long
-      marker.title building.name
-      marker.infowindow "<h4>#{bldg_link}</h4>"
-      marker.picture({
-                :url    => "https://i.stack.imgur.com/rU427.png",
-                :width  => "38",
-                :height => "38"
-               })
-    end
+    set_markers
   end
 
   def show
@@ -37,6 +26,21 @@ class BuildingsController < ApplicationController
 
   def story_params
     params.require(:story).permit(:title, :description, :img, :user_id, :building_id)
+  end
+
+  def set_markers
+    @hash = Gmaps4rails.build_markers(@buildings) do |building, marker|
+      bldg_link = view_context.link_to building.name, building_path(building)
+      marker.lat building.lat
+      marker.lng building.long
+      marker.title building.name
+      marker.infowindow "<h4>#{bldg_link}</h4>"
+      marker.picture({
+                :url    => "https://i.stack.imgur.com/rU427.png",
+                :width  => "38",
+                :height => "38"
+               })
+    end
   end
 
 end
